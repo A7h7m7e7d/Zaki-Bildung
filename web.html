@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Germany Course Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="LOGO.png">
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #3D550C;
+            /* Updated header background color */
+            color: #ECF87F;
+            /* Updated header text color */
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            max-width: 60px;
+            height: auto;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-right: 20px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: #ECF87F;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        nav ul li:hover {
+            color: #333;
+        }
+
+        /* Main section styles */
+        section {
+            padding: 70px;
+            text-align: center;
+        }
+
+        .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        /* Enroll button styles */
+        .enroll-btn {
+            display: inline-block;
+            padding: 20px 40px;
+            background-color: #81B622;
+            /* Updated button background color */
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #18181a;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .enroll-btn span:first-child {
+            position: relative;
+            transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+            z-index: 10;
+        }
+
+        .enroll-btn span:last-child {
+            color: white;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+            z-index: 100;
+            opacity: 0;
+            top: 50%;
+            left: 50%;
+            transform: translateY(225%) translateX(-50%);
+            height: 14px;
+            line-height: 13px;
+        }
+
+        .enroll-btn:after {
+            content: "";
+            position: absolute;
+            bottom: -50%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            transform-origin: bottom center;
+            transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+            transform: skewY(9.3deg) scaleY(0);
+            z-index: 50;
+        }
+
+        .enroll-btn:hover:after {
+            transform-origin: bottom center;
+            transform: skewY(9.3deg) scaleY(2);
+        }
+
+        .enroll-btn:hover span:last-child {
+            transform: translateX(-50%) translateY(-100%);
+            opacity: 1;
+            transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #59981A;
+            /* Updated footer background color */
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Mobile-specific styles */
+        @media only screen and (max-width: 600px) {
+            .logo {
+                margin-left: 10px;
+                margin-right: 0;
+            }
+
+            .header-title {
+                font-size: 24px;
+                margin-right: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+
+            /* Main section styles */
+            section {
+                padding: 30px;
+            }
+
+            .enroll-btn {
+                font-size: 16px;
+                padding: 15px 30px;
+            }
+
+            .enroll-btn span:last-child {
+                transform: translateY(150%) translateX(-50%);
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <img src="LOGO.png" alt="German Language Course Logo" class="logo">
+            <h1 class="header-title">Germany Course</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="instructor.html">Instructor</a></li>
+                <li><a href="strategy.html">Course Strategy</a></li>
+                <li><a href="statistics.html">Course Statistics</a></li>
+                <li><a href="enroll.html">Enroll Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="section-content">
+            <h2>Welcome to the German Language Course Website</h2>
+            <p>If you are a Grade 10, Grade 11, or even a Grade 12 student, you can join us.</p>
+        </div>
+    </section>
+    <section class="img">
+        <img src="LOGO-no-BAck.png" alt="LOGO">
+    </section>
+    <section>
+        <h2>What are you waiting for?</h2>
+        <a href="#" class="enroll-btn" role="button">
+            <span class="text">Enro<!DOCTYPE html>
+            <html lang="en">
+            
+            <head>
+                <title>Germany Course Website</title>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="icon" href="LOGO.png">
+                <style>
+                    /* Global styles */
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 0;
+                        padding: 0;
+                        background-color: #EBEBE3;
+                        /* Updated background color */
+                    }
+            
+                    /* Header styles */
+                    header {
+                        background-color: #53276D;
+                        /* Updated header background color */
+                        color: #8C8BA4;
+                        /* Updated header text color */
+                        padding: 5px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+            
+                    /* ... (rest of the CSS styles remain unchanged) ... */
+            
+                    /* Footer styles */
+                    footer {
+                        background-color: #53276D;
+                        /* Updated footer background color */
+                        color: #8C8BA4;
+                        /* Updated footer text color */
+                        text-align: center;
+                        padding: 10px;
+                    }
+            
+                    /* ... (rest of the CSS styles remain unchanged) ... */
+                </style>
+            </head>
+            
+            <body>
+                <!-- ... (rest of the HTML content remains unchanged) ... -->
+            </body>
+            
+            </html>
+ll </span>
+            <span>Discover German</span>
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 German Course. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
